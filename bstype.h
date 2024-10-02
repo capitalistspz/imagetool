@@ -1,3 +1,6 @@
+/**
+ * Based on https://github.com/cemu-project/Cemu/blob/main/src/Common/betype.h
+ */
 #pragma once
 #include <type_traits>
 #include <bit>
