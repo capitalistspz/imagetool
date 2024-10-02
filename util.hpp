@@ -20,7 +20,7 @@ constexpr std::string to_hex_string(std::span<const u8> span, bool lower_case = 
 
    auto u8Span = std::span<const u8>(span.data(), span.size_bytes());
    std::string output;
-   output.reserve(span.size());
+   output.reserve(span.size() * 2);
    const auto& map = lower_case ? lcmap : ucmap;
    for (auto i : u8Span)
    {
