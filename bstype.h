@@ -219,8 +219,8 @@ using s32be = betype<s32>;
 using s16be = betype<s16>;
 using s8be = s8;
 
-using float32be = bstype<float>;
-using float64be = bstype<double>;
+using float32be = betype<float>;
+using float64be = betype<double>;
 
 template <typename TBase>
 using letype = std::conditional_t<std::endian::native == std::endian::little, TBase, bstype<TBase>>;
