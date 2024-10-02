@@ -214,9 +214,9 @@ using u32be = betype<u32>;
 using u16be = betype<u16>;
 using u8be = u8;
 
-using s64be = bstype<s64>;
-using s32be = bstype<s32>;
-using s16be = bstype<s16>;
+using s64be = betype<s64>;
+using s32be = betype<s32>;
+using s16be = betype<s16>;
 using s8be = s8;
 
 using float32be = bstype<float>;
