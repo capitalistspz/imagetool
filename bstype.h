@@ -41,7 +41,7 @@ constexpr TEnum SwapEndian(TEnum value)
 
 // swap if native isn't big endian
 template <typename T>
-constexpr T _BE(T value)
+constexpr T as_be(T value)
 {
    if constexpr (std::endian::native == std::endian::big)
       return value;
@@ -51,7 +51,7 @@ constexpr T _BE(T value)
 
 // swap if native isn't little endian
 template <typename T>
-constexpr T _LE(T value)
+constexpr T as_le(T value)
 {
    if constexpr (std::endian::native == std::endian::little)
       return value;
