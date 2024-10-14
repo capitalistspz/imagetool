@@ -192,6 +192,14 @@ public:
       return *this;
    }
 
+   constexpr bstype operator++(int)
+      requires std::integral<T>
+   {
+      const auto old = value();
+      m_value = SwapEndian(T(old + 1));
+      return old;
+   }
+
    constexpr bstype& operator--()
       requires std::integral<T>
    {
@@ -199,6 +207,13 @@ public:
       return *this;
    }
 
+   constexpr bstype operator--(int)
+      requires std::integral<T>
+   {
+      const auto old = value();
+      m_value = SwapEndian(T(old - 1));
+      return old;
+   }
 private:
    T m_value;
 };
@@ -254,7 +269,6 @@ static_assert(std::is_copy_constructible_v<u32be>);
 static_assert(std::is_move_constructible_v<u32be>);
 static_assert(std::is_copy_assignable_v<u32be>);
 static_assert(std::is_move_assignable_v<u32be>);
-
 
 #include <format>
 template <typename TBase>
