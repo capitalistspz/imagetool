@@ -9,13 +9,6 @@
 template <typename T>
 concept readable = std::is_trivially_copy_constructible_v<T> && std::is_default_constructible_v<T>;
 
-template <typename T>
-concept reservable_contiguous_range = requires (T t, unsigned int a)
-{
-   std::is_default_constructible_v<T>;
-   t.reserve(a);
-};
-
 enum class SeekFrom : int
 {
    Beg = SEEK_SET,
